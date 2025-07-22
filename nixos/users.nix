@@ -13,7 +13,13 @@ in {
     users.${username} = {
       isNormalUser = true;
       description = "${username} account";
-      extraGroups = ["networkmanager" "wheel"];
+      initialPassword = "password";
+      extraGroups = [ "wheel"
+                      "audio"
+                      "input"
+                      "networkmanager"
+                      "systemd-journal"
+                      "video"];
     };
   };
 }

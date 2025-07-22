@@ -16,7 +16,7 @@
       DisableProfileImport = true;
       DisableSetDesktopBackground = true;
       DontCheckDefaultBrowser = true;
-      HomepageURL = "https://start.hadi.diy";
+      HomepageURL = "priv.au";
       StartPage = "homepage";
       NewTabPage = true;
       OfferToSaveLogins = false;

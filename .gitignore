@@ -1,1 +1,6 @@
 .sops.yaml
+result
+result-*
+*.qcow2
+.direnv
+to-do.md

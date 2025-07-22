@@ -34,32 +34,32 @@
 
   outputs = inputs @ {nixpkgs, ...}: {
     nixosConfigurations = {
-      nixy =
-        # CHANGEME: This should match the 'hostname' in your variables.nix file
+      null-fw13 =
         nixpkgs.lib.nixosSystem {
           modules = [
             {
               nixpkgs.overlays = [];
               _module.args = {inherit inputs;};
             }
-            inputs.nixos-hardware.nixosModules.omen-16-n0005ne # CHANGEME: check https://github.com/NixOS/nixos-hardware
+            inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
             inputs.home-manager.nixosModules.home-manager
             inputs.stylix.nixosModules.stylix
-            ./hosts/laptop/configuration.nix # CHANGEME: change the path to match your host folder
+            inputs.sops-nix.nixosModules.sops
+            ./hosts/null-fw13/configuration.nix
           ];
         };
       # Jack is my server
-      jack = nixpkgs.lib.nixosSystem {
-        modules = [
-          {_module.args = {inherit inputs;};}
-          inputs.home-manager.nixosModules.home-manager
-          inputs.stylix.nixosModules.stylix
-          inputs.sops-nix.nixosModules.sops
-          inputs.nixarr.nixosModules.default
-          inputs.search-nixos-api.nixosModules.search-nixos-api
-          ./hosts/server/configuration.nix
-        ];
-      };
+      # jack = nixpkgs.lib.nixosSystem {
+      #   modules = [
+      #     {_module.args = {inherit inputs;};}
+      #     inputs.home-manager.nixosModules.home-manager
+      #     inputs.stylix.nixosModules.stylix
+      #     inputs.sops-nix.nixosModules.sops
+      #     inputs.nixarr.nixosModules.default
+      #     inputs.search-nixos-api.nixosModules.search-nixos-api
+      #     ./hosts/server/configuration.nix
+      #   ];
+      # };
     };
   };
 }

@@ -1,20 +1,26 @@
 {config, ...}: {
   imports = [
     # Mostly system related configuration
-    ../../nixos/nvidia.nix # CHANGEME: Remove this line if you don't have an Nvidia GPU
+    ../../nixos/ai.nix
+    ../../nixos/amd.nix
     ../../nixos/audio.nix
     ../../nixos/bluetooth.nix
     ../../nixos/fonts.nix
+    ../../nixos/gaming.nix
     ../../nixos/home-manager.nix
+    ../../nixos/kde.nix
+    ../../nixos/keychron.nix
     ../../nixos/nix.nix
-    ../../nixos/systemd-boot.nix
     ../../nixos/sddm.nix
+    ../../nixos/ssh.nix
+    ../../nixos/system-packages.nix
+    ../../nixos/systemd-boot.nix
+    ../../nixos/testing.nix
+    ../../nixos/touchpad.nix
     ../../nixos/users.nix
     ../../nixos/utils.nix
-    ../../nixos/tailscale.nix
-    ../../nixos/hyprland.nix
-
-    ../../nixos/omen.nix # For my laptop only
+    ../../nixos/virt.nix
+    ../../nixos/wifi.nix
 
     # You should let those lines as is
     ./hardware-configuration.nix
@@ -24,5 +30,5 @@
   home-manager.users."${config.var.username}" = import ./home.nix;
 
   # Don't touch this
-  system.stateVersion = "24.05";
+  system.stateVersion = config.var.stateVersion;
 }

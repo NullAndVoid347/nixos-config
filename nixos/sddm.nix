@@ -1,7 +1,7 @@
 # SDDM is a display manager for X11 and Wayland
 {
   pkgs,
-  inputs,
+  # inputs,
   config,
   ...
 }: let
@@ -47,11 +47,11 @@ in {
       enable = true;
       wayland.enable = true;
       theme = "sddm-astronaut-theme";
-      settings = {
-        Wayland.SessionDir = "${
-          inputs.hyprland.packages."${pkgs.system}".hyprland
-        }/share/wayland-sessions";
-      };
+      # settings = {
+      #   Wayland.SessionDir = "${
+      #     inputs.hyprland.packages."${pkgs.system}".hyprland
+      #   }/share/wayland-sessions";
+      # };
     };
   };
 

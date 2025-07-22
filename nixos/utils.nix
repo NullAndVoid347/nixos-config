@@ -11,6 +11,8 @@
   defaultLocale = config.var.defaultLocale;
   extraLocale = config.var.extraLocale;
   autoUpgrade = config.var.autoUpgrade;
+  default = config.var.default;
+  env = config.var.env;
 in {
   networking.hostName = hostname;
 
@@ -24,6 +26,8 @@ in {
     flags = ["--update-input" "nixpkgs" "--commit-lock-file"];
     allowReboot = false;
   };
+
+  services.fwupd.enable = true;
 
   time = {timeZone = timeZone;};
   i18n.defaultLocale = defaultLocale;
@@ -41,25 +45,19 @@ in {
 
   services = {
     xserver = {
-      enable = true;
       xkb.layout = keyboardLayout;
       xkb.variant = "";
-    };
-    gnome.gnome-keyring.enable = true;
-    psd = {
-      enable = true;
-      resyncTimer = "10m";
     };
   };
   console.keyMap = keyboardLayout;
 
   environment.variables = {
-    XDG_DATA_HOME = "$HOME/.local/share";
-    PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
-    EDITOR = "nvim";
-    TERMINAL = "kitty";
-    TERM = "kitty";
-    BROWSER = "zen-beta";
+    XDG_DATA_HOME = env.XDG_DATA_HOME;
+    PASSWORD_STORE_DIR = env.PASSWORD_STORE_DIR;
+    EDITOR = default.editor;
+    TERMINAL = default.terminal;
+    TERM = default.terminal;
+    BROWSER = default.browser;
   };
 
   services.libinput.enable = true;
@@ -67,14 +65,15 @@ in {
   services = {
     dbus = {
       enable = true;
-      implementation = "broker";
-      packages = with pkgs; [gcr gnome-settings-daemon];
+      packages = [ pkgs.dconf ];
     };
     gvfs.enable = true;
     upower.enable = true;
     power-profiles-daemon.enable = true;
     udisks2.enable = true;
   };
+
+  services.printing.enable = true;
 
   # enable zsh autocompletion for system packages (systemd, etc)
   environment.pathsToLink = ["/share/zsh"];
@@ -89,33 +88,7 @@ in {
     nixos.enable = false;
   };
 
-  environment.systemPackages = with pkgs; [
-    hyprland-qtutils
-    fd
-    bc
-    gcc
-    git-ignore
-    xdg-utils
-    wget
-    curl
-    vim
-  ];
-
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    config = {
-      common.default = ["gtk"];
-      hyprland.default = ["gtk" "hyprland"];
-    };
-
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
-  };
-
   security = {
-    # allow wayland lockers to unlock the screen
-    pam.services.hyprlock.text = "auth include login";
-
     # userland niceness
     rtkit.enable = true;
 
@@ -123,8 +96,18 @@ in {
     sudo.wheelNeedsPassword = false;
   };
 
+  programs.mtr.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
+
   services.logind.extraConfig = ''
     # don’t shutdown when power button is short-pressed
     HandlePowerKey=ignore
   '';
+
+  services.hardware.bolt.enable = true;
+  services.hardware.openrgb.enable = true;
+
 }
