@@ -25,7 +25,7 @@
 
     git = {
       username = "NullAndVoid347";
-      email = "github.com.urgency150@passmail.net";
+      email = "70830135+NullAndVoid347@users.noreply.github.com";
     };
 
     default = {
