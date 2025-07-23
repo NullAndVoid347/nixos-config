@@ -9,7 +9,7 @@
   ];
 
   config.var = {
-    hostname = "null-fw13";
+    hostname = "void-fw13";
     username = "null";
     configDirectory =
       "/home/"

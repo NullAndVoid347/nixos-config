@@ -34,7 +34,7 @@
 
   outputs = inputs @ {nixpkgs, ...}: {
     nixosConfigurations = {
-      null-fw13 =
+      void-fw13 =
         nixpkgs.lib.nixosSystem {
           modules = [
             {
@@ -45,7 +45,7 @@
             inputs.home-manager.nixosModules.home-manager
             inputs.stylix.nixosModules.stylix
             inputs.sops-nix.nixosModules.sops
-            ./hosts/null-fw13/configuration.nix
+            ./hosts/void-fw13/configuration.nix
           ];
         };
       # Jack is my server

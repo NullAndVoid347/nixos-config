@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   programs.zed-editor = {
     enable = true;
     extensions = [
@@ -66,7 +66,7 @@
         copy_on_select = true;
         env = {};
       };
-      theme = {
+      theme = lib.mkDefault {
         mode = "dark";
         light = "One Light";
         dark = "One Dark";

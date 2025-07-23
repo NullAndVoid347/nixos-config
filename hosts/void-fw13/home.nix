@@ -35,10 +35,10 @@
       chromium
       discord
       ghostty
-      gimp
+      # gimp
       goverlay
       gparted
-      grayjay
+      # grayjay
       haruna
       krita
       librewolf

@@ -3,6 +3,7 @@
   pkgs,
   # inputs,
   config,
+  lib,
   ...
 }: let
   foreground = config.theme.textColorOnWallpaper;
@@ -42,7 +43,7 @@
 in {
   services.displayManager = {
     sddm = {
-      package = pkgs.kdePackages.sddm;
+      package = lib.mkDefault pkgs.kdePackages.sddm;
       extraPackages = [sddm-astronaut];
       enable = true;
       wayland.enable = true;
