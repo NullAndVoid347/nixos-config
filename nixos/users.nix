@@ -13,7 +13,7 @@ in {
     users.${username} = {
       isNormalUser = true;
       description = "${username} account";
-      initialPassword = "password";
+      # initialPassword = "password";
       extraGroups = [ "wheel"
                       "audio"
                       "input"

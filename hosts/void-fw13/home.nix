@@ -29,37 +29,37 @@
     homeDirectory = "/home/" + config.var.username;
 
     packages = with pkgs; [
-      ardour
-      bottles
-      boxbuddy
+      # ardour
+      # bottles
+      # boxbuddy
       chromium
       discord
       ghostty
       # gimp
-      goverlay
+      # goverlay
       gparted
       # grayjay
       haruna
-      krita
+      # krita
       librewolf
-      mangohud
+      # mangohud
       obsidian
-      ocrfeeder
-      onlyoffice-bin
+      # ocrfeeder
+      # onlyoffice-bin
       protonmail-desktop
       proton-pass
       protonvpn-gui
-      ptyxis
-      rclone-browser
-      rclone-ui
+      # ptyxis
+      # rclone-browser
+      # rclone-ui
       stremio
       teams-for-linux
       tidal-hifi
-      via
-      vial
-      virt-manager
+      # via
+      # vial
+      # virt-manager
       vlc
-      vscode
+      # vscode
     ];
 
     # Import my profile picture, used by the hyprpanel dashboard

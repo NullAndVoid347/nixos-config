@@ -2,8 +2,8 @@
   programs.zed-editor = {
     enable = true;
     extensions = [
-      "html"
-      "toml"
+#       "html"
+#       "toml"
       "nix"
       # "ron"
       "git-firefly"
@@ -18,7 +18,7 @@
       # "jsonnet"
       # "jinja2"
       # Shells
-      "basher"
+#       "basher"
       "nu"
       # Tools
       # "proto"
@@ -26,27 +26,27 @@
       # "env"
       # "live-server"
       # Build
-      "make"
-      "just"
+#       "make"
+#       "just"
       # DevOps
-      "dockerfile"
-      "docker-compose"
+#       "dockerfile"
+#       "docker-compose"
       # "helm"
       # "terraform"
       # "kdl"
       # Formats
-      "toml"
-      "cargo-tom"
-      "csv"
-      "ini"
+#       "toml"
+#       "cargo-tom"
+#       "csv"
+#       "ini"
       # "scheme"
       # "asciidoc"
-      "http"
+#       "http"
       # Themes
-      "catppuccin"
-      "tokyo-night"
-      "one-dark-pro"
-      "catppuccin-blur"
+      # "catppuccin"
+      # "tokyo-night"
+#       "one-dark-pro"
+      # "catppuccin-blur"
     ];
     extraPackages = with pkgs; [
       nixd
@@ -54,10 +54,10 @@
       alejandra
     ];
     userSettings = {
-      features = {
-        inline_completion_provider = "none";
-      };
-      assistant.enabled = false;
+#       features = {
+#         inline_completion_provider = "none";
+#       };
+#       assistant.enabled = false;
       autosave.after_delay.milliseconds = 1000;
       tab_size = 2;
       vim_mode = false;
@@ -66,11 +66,11 @@
         copy_on_select = true;
         env = {};
       };
-      theme = lib.mkDefault {
-        mode = "dark";
-        light = "One Light";
-        dark = "One Dark";
-      };
+#       theme = lib.mkDefault {
+#         mode = "dark";
+#         light = "One Light";
+#         dark = "One Dark";
+#       };
       show_whitespaces = "none";
       lsp = {
         nil = {

@@ -49,44 +49,44 @@ in {
       xkb.variant = "";
     };
   };
-  console.keyMap = keyboardLayout;
+#   console.keyMap = keyboardLayout;
 
-  environment.variables = {
-    XDG_DATA_HOME = env.XDG_DATA_HOME;
-    PASSWORD_STORE_DIR = env.PASSWORD_STORE_DIR;
-    EDITOR = default.editor;
-    TERMINAL = default.terminal;
-    TERM = default.terminal;
-    BROWSER = default.browser;
-  };
+#   environment.variables = {
+#     # XDG_DATA_HOME = env.XDG_DATA_HOME;
+#     # PASSWORD_STORE_DIR = env.PASSWORD_STORE_DIR;
+#     EDITOR = default.editor;
+#     TERMINAL = default.terminal;
+#     TERM = default.terminal;
+#     BROWSER = default.browser;
+#   };
 
   services.libinput.enable = true;
-  programs.dconf.enable = true;
-  services = {
-    dbus = {
-      enable = true;
-      packages = [ pkgs.dconf ];
-    };
-    gvfs.enable = true;
-    upower.enable = true;
-    power-profiles-daemon.enable = true;
-    udisks2.enable = true;
-  };
+  # programs.dconf.enable = true;
+  # services = {
+  #   dbus = {
+  #     enable = true;
+  #     packages = [ pkgs.dconf ];
+  #   };
+  #   gvfs.enable = true;
+  #   upower.enable = true;
+  #   power-profiles-daemon.enable = true;
+  #   udisks2.enable = true;
+  # };
 
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   # enable zsh autocompletion for system packages (systemd, etc)
-  environment.pathsToLink = ["/share/zsh"];
+#   environment.pathsToLink = ["/share/zsh"];
 
   # Faster rebuilding
-  documentation = {
-    enable = true;
-    doc.enable = false;
-    man.enable = true;
-    dev.enable = false;
-    info.enable = false;
-    nixos.enable = false;
-  };
+  # documentation = {
+  #   enable = true;
+  #   doc.enable = false;
+  #   man.enable = true;
+  #   dev.enable = false;
+  #   info.enable = false;
+  #   nixos.enable = false;
+  # };
 
   security = {
     # userland niceness
@@ -102,12 +102,12 @@ in {
     enableSSHSupport = true;
   };
 
-  services.logind.extraConfig = ''
-    # don’t shutdown when power button is short-pressed
-    HandlePowerKey=ignore
-  '';
+  # services.logind.extraConfig = ''
+  #   # don’t shutdown when power button is short-pressed
+  #   HandlePowerKey=ignore
+  # '';
 
   services.hardware.bolt.enable = true;
-  services.hardware.openrgb.enable = true;
+  # services.hardware.openrgb.enable = true;
 
 }

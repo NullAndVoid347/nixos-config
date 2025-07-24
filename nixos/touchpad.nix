@@ -4,8 +4,8 @@
   services.libinput = {
     touchpad = {
       tapping = true;
-      naturalScrolling = true;
-      scrollMethod = "twofinger";
+      # naturalScrolling = true;
+      # scrollMethod = "twofinger";
       # clickfinger_behavior = true;
     };
   };

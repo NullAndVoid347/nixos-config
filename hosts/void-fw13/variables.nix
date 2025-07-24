@@ -3,10 +3,10 @@
   lib,
   ...
 }: {
-  imports = [
-    # Choose your theme here:
-    ../../themes/catppuccin.nix
-  ];
+  # imports = [
+  #   # Choose your theme here:
+  #   ../../themes/catppuccin.nix
+  # ];
 
   config.var = {
     hostname = "void-fw13";
@@ -16,7 +16,7 @@
       + config.var.username
       + "/.config/nixos"; # The path of the nixos configuration directory
 
-    keyboardLayout = "en";
+    keyboardLayout = "us";
 
     location = "New_York";
     timeZone = "America/New_York";
@@ -34,10 +34,10 @@
       browser = "zen-beta";
     };
 
-    env = {
-      XDG_DATA_HOME = "$HOME/.local/share";
-      PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
-    };
+    # env = {
+    #   XDG_DATA_HOME = "$HOME/.local/share";
+    #   PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
+    # };
 
     autoUpgrade = false;
     autoGarbageCollector = true;
