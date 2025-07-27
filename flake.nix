@@ -1,8 +1,7 @@
 {
-  # https://github.com/anotherhadi/nixy
+  # https://github.com/NullAndVoid347/nixos-config
   description = ''
-    Nixy simplifies and unifies the Hyprland ecosystem with a modular, easily customizable setup.
-    It provides a structured way to manage your system configuration and dotfiles with minimal effort.
+    Modular nixos config that implements flakes, home-manager, sops-nix
   '';
 
   inputs = {
@@ -45,11 +44,10 @@
             inputs.home-manager.nixosModules.home-manager
             # inputs.stylix.nixosModules.stylix
             inputs.sops-nix.nixosModules.sops
-            ./hosts/void-fw13/configuration.nix
+            ./configs/void-fw13/configuration.nix
           ];
         };
-      # Jack is my server
-      # jack = nixpkgs.lib.nixosSystem {
+      # void-fw16 = nixpkgs.lib.nixosSystem {
       #   modules = [
       #     {_module.args = {inherit inputs;};}
       #     inputs.home-manager.nixosModules.home-manager
@@ -57,7 +55,7 @@
       #     inputs.sops-nix.nixosModules.sops
       #     inputs.nixarr.nixosModules.default
       #     inputs.search-nixos-api.nixosModules.search-nixos-api
-      #     ./hosts/server/configuration.nix
+      #     ./configs/void-fw16/configuration.nix
       #   ];
       # };
     };
