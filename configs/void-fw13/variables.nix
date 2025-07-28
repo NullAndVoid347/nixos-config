@@ -42,8 +42,6 @@
     autoUpgrade = false;
     autoGarbageCollector = true;
     stateVersion = "25.05";
-    
-    
   };
 
   # Let this here
@@ -53,4 +51,5 @@
       default = {};
     };
   };
+
 }
