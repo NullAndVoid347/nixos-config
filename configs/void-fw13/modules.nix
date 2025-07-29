@@ -36,6 +36,7 @@
     ];
     
     themes = [
+      # inputs.stylix.nixosModules.stylix
     ];
     
     legacy-home-programs = [

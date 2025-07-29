@@ -8,7 +8,10 @@
 }: let
   username = var.username;
 in {
-  imports = [inputs.sops-nix.homeManagerModules.sops];
+  imports = [
+    # inputs.sops-nix.nixosModules.sops
+    inputs.sops-nix.homeManagerModules.sops
+  ];
 
   sops = {
     age.keyFile = "/home/" + username + "/.config/sops/age/keys.txt";

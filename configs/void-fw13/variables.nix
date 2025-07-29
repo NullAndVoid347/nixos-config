@@ -47,7 +47,6 @@
 
   # Let this here
   options.var = lib.mkOption { type = lib.types.attrs; default = {
-    
   };};
 
 }

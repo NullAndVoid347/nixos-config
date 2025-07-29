@@ -31,10 +31,7 @@ in
     # ../../nixos/virt.nix
     ../../modules/legacy-nixos/wifi.nix
 
-    # inputs.nixos-hardware.nixosModules."${var.nixos-hardware-model}"
     inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
-    inputs.sops-nix.nixosModules.sops
-    # inputs.stylix.nixosModules.stylix
   ];
 
   # Don't touch this
