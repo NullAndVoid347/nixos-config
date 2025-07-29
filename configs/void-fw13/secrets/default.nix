@@ -3,10 +3,10 @@
 {
   pkgs,
   inputs,
-  config,
+  var,
   ...
 }: let
-  username = config.var.username;
+  username = var.username;
 in {
   imports = [inputs.sops-nix.homeManagerModules.sops];
 

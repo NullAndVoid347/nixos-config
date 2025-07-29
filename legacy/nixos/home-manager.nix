@@ -18,8 +18,8 @@ in
     backupFileExtension = "hm-backup";
     extraSpecialArgs = {inherit inputs var;};
     users."${var.username}" = {
-      # imports = userImports;
       
+      # imports = userImports;
       imports = [
         # Programs
         ../../legacy/home/programs/bash
@@ -34,13 +34,10 @@ in
         
         # System (Desktop environment like stuff)
         ../../legacy/home/system/kde
-        
-        # ../../configs/void-fw13/secrets
-        ./secrets
+        ../../configs/void-fw13/secrets
       ]; 
       
       home = {
-        # inherit (config.var) username;
         homeDirectory = "/home/" + var.username;
     
         packages = with pkgs; [
