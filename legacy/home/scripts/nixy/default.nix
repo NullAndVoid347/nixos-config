@@ -7,11 +7,11 @@
 #- - `nixy ...` - ... see the script for more commands.
 {
   pkgs,
-  config,
+  var,
   ...
 }: let
-  configDirectory = config.var.configDirectory;
-  hostname = config.var.hostname;
+  configDirectory = var.configDirectory;
+  hostname = var.hostname;
 
   nixy =
     pkgs.writeShellScriptBin "nixy"

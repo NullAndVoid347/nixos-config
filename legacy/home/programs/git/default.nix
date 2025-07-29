@@ -1,12 +1,9 @@
 # Git configuration
-{config, ...}: let
-  username = config.var.git.username;
-  email = config.var.git.email;
-in {
+{var, ...}: {
   programs.git = {
     enable = true;
-    userName = username;
-    userEmail = email;
+    userName = var.git.username;
+    userEmail = var.git.email;
     ignores = [
       ".cache/"
       ".DS_Store"

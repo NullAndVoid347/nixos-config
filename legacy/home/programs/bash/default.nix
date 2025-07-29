@@ -1,6 +1,4 @@
-{ config, ... }: let
-  username = config.var.username;
-in {
+{ var, ... }: {
   programs.bash = {
     enable = true;
     enableCompletion = true;
@@ -24,7 +22,7 @@ in {
         c-reload-shell = "source ~/.bashrc";
         c-update-all = "";
         c-clean-all = "";
-        c-debug-home = "journalctl --unit home-manager-${username}.service"; #--since=DATE
+        c-debug-home = "journalctl --unit home-manager-${var.username}.service"; #--since=DATE
     };
   };
 }

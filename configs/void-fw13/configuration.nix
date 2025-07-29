@@ -1,4 +1,12 @@
-{config, inputs, ...}: {
+{
+  config,
+  inputs,
+  ...
+}:
+let
+  var = config.var;
+in
+{
   imports = [
     # Mostly system related configuration
     # ../../nixos/ai.nix
@@ -24,16 +32,14 @@
 
     # You should let those lines as is
     ./hardware-configuration.nix
-    ./variables.nix
 
+
+    # inputs.nixos-hardware.nixosModules."${nixos-hardware-model}"
     inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
-    inputs.home-manager.nixosModules.home-manager
-    # inputs.stylix.nixosModules.stylix
     inputs.sops-nix.nixosModules.sops
+    # inputs.stylix.nixosModules.stylix
   ];
 
-  home-manager.users."${config.var.username}" = import ./home.nix;
-
   # Don't touch this
-  system.stateVersion = config.var.stateVersion;
+  system.stateVersion = var.stateVersion;
 }

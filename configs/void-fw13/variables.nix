@@ -39,9 +39,42 @@
     #   PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
     # };
 
+    arch = "x86_64-linux";
+    nixos-hardware-model = "framework-amd-ai-300-series";
+
     autoUpgrade = false;
     autoGarbageCollector = true;
     stateVersion = "25.05";
+
+    # userImports = ("./configs/" + config.var.hostname + "/userImports.nix");
+    # pathToFile = "../vimfiles";
+    # vimrcConfig.customRC = (builtins.readFile ./${pathToFile}/vimrc.vim)
+    # pathToConfigs = ("./configs/" + config.var.hostname);
+    # userImports = (./${config.var.pathToConfigs}/userImports.nix);
+    #   imports = [./${pathToConfigs}/userImports.nix];
+    #   # userImports = config.var.userImports;
+    # pathToConfigs = ("../../configs/" + config.var.hostname);
+    #
+    #
+    # userImports = [
+    #   # Programs
+    #   ./../../legacy/home/programs/bash
+    #   ../../legacy/home/programs/git
+    #   # ../../legacy/home/programs/firefox
+    #   ../../legacy/home/programs/zed
+    #   ../../legacy/home/programs/zen
+    #   ../../legacy/home/programs/git/signing.nix
+
+    #   # Scripts
+    #   # ../../legacy/home/scripts # All scripts
+
+    #   # System (Desktop environment like stuff)
+    #   # ../../legacy/home/system/kde
+
+    #   # ../../configs/void-fw13/secrets
+    #   ./secrets
+    # ];
+
   };
 
   # Let this here
