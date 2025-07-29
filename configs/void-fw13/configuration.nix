@@ -5,7 +5,7 @@
 }:
 let
   var = config.var;
-  legacy-config = config.modules.legacy-config;
+  configuration-nix = config.modules.configuration-nix;
 in
 {
   imports = [
