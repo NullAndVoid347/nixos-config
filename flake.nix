@@ -35,10 +35,7 @@
     nixosConfigurations = {
       void-fw13 = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
-        modules = [
-          ./configs/void-fw13/configuration.nix
-          ./configs/void-fw13/variables.nix
-        ];
+        modules = [ ./configs/void-fw13 ];
       };
       # void-fw16 = nixpkgs.lib.nixosSystem {
       #   modules = [

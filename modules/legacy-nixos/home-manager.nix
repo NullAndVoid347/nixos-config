@@ -7,6 +7,7 @@
 }:
 let
   var = config.var;
+  modules = config.modules;
 in
 {
   imports = [
@@ -16,27 +17,10 @@ in
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "hm-backup";
-    extraSpecialArgs = {inherit inputs var;};
+    extraSpecialArgs = {inherit inputs var modules;};
     users."${var.username}" = {
-      
-      # imports = userImports;
-      imports = [
-        # Programs
-        ../../legacy/home/programs/bash
-        ../../legacy/home/programs/git
-        ../../legacy/home/programs/firefox
-        ../../legacy/home/programs/zed
-        ../../legacy/home/programs/zen
-        ../../legacy/home/programs/git/signing.nix
-        
-        # Scripts
-        ../../legacy/home/scripts # All scripts
-        
-        # System (Desktop environment like stuff)
-        ../../legacy/home/system/kde
-        ../../configs/void-fw13/secrets
-      ]; 
-      
+      imports = modules.home-manager;
+
       home = {
         homeDirectory = "/home/" + var.username;
     

@@ -3,12 +3,9 @@
   lib,
   ...
 }: {
-  # imports = [
-  #   # Choose your theme here:
-  #   ../../themes/catppuccin.nix
-  # ];
 
   config.var = {
+    
     hostname = "void-fw13";
     username = "null";
     configDirectory =
@@ -46,43 +43,11 @@
     autoGarbageCollector = true;
     stateVersion = "25.05";
 
-    # userImports = ("./configs/" + config.var.hostname + "/userImports.nix");
-    # pathToFile = "../vimfiles";
-    # vimrcConfig.customRC = (builtins.readFile ./${pathToFile}/vimrc.vim)
-    # pathToConfigs = ("./configs/" + config.var.hostname);
-    # userImports = (./${config.var.pathToConfigs}/userImports.nix);
-    #   imports = [./${pathToConfigs}/userImports.nix];
-    #   # userImports = config.var.userImports;
-    # pathToConfigs = ("../../configs/" + config.var.hostname);
-    #
-    #
-    # userImports = [
-    #   # Programs
-    #   ./../../legacy/home/programs/bash
-    #   ../../legacy/home/programs/git
-    #   # ../../legacy/home/programs/firefox
-    #   ../../legacy/home/programs/zed
-    #   ../../legacy/home/programs/zen
-    #   ../../legacy/home/programs/git/signing.nix
-
-    #   # Scripts
-    #   # ../../legacy/home/scripts # All scripts
-
-    #   # System (Desktop environment like stuff)
-    #   # ../../legacy/home/system/kde
-
-    #   # ../../configs/void-fw13/secrets
-    #   ./secrets
-    # ];
-
   };
 
   # Let this here
-  options = {
-    var = lib.mkOption {
-      type = lib.types.attrs;
-      default = {};
-    };
-  };
+  options.var = lib.mkOption { type = lib.types.attrs; default = {
+    
+  };};
 
 }
