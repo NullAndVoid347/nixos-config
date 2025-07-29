@@ -1,10 +1,5 @@
 
-nix.conf - Nix 2.28.5 Reference Manual - https://nix.dev/manual/nix/2.28/command-ref/conf-file.html#conf-use-xdg-base-directories
-Common Environment Variables - Nix 2.28.5 Reference Manual - https://nix.dev/manual/nix/2.28/command-ref/env-common
-XDG Base Directory Specification - https://specifications.freedesktop.org/basedir-spec/latest/
-update sops secrets.yaml - Google Search - https://www.google.com/search?client=firefox-b-1-d&channel=entpr&q=update+sops+secrets.yaml
-GitHub - getsops/sops: Simple and flexible tool for managing secrets - https://github.com/getsops/sops?tab=readme-ov-file#usage
-nixos-config/server-modules at main · NullAndVoid347/nixos-config · GitHub - https://github.com/NullAndVoid347/nixos-config/tree/main/server-modules
+
 
 
 

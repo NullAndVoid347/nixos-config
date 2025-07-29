@@ -111,5 +111,10 @@ sudo nixos-rebuild switch --flake ~/.config/nixos#yourhostname
   - with instructions for updating flake.nix - `inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series`
   - with instructions for updating flake.nix - hostname references
 - Start cleaning up `./legacy/` folder and moving into `./modules/`
+- Look into more themes and implementing them
+- Add Cosmic DE
+- look into disko for declarifily configuring disks
+- look into secure boot and luks unlock through tpm
 - Search repo for #TODO and fix
 - Go through [Scratch Pad](.github/docs/to-do.md)
+-

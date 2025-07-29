@@ -37,6 +37,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./configs/void-fw13/configuration.nix
+          ./configs/void-fw13/variables.nix
         ];
       };
       # void-fw16 = nixpkgs.lib.nixosSystem {
