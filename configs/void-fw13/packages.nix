@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   pkgs,
   ...
@@ -7,15 +6,15 @@
 {
   config.packages = {
     
-    user = builtins.concatLists [
-      config.packages.unsorted-user 
-      # config.packages.gui
-    ];
+    # user = builtins.concatLists [
+    #   config.packages.unsorted-user 
+    #   # config.packages.gui
+    # ];
     
-    system = builtins.concatLists [
-      config.packages.unsorted-system 
-      # config.packages.cli
-    ];
+    # system = builtins.concatLists [
+    #   config.packages.unsorted-system 
+    #   # config.packages.cli
+    # ];
     
     cli = [
     ];
@@ -29,7 +28,8 @@
     browsers = [
     ];
     
-    unsorted-user = with pkgs; [
+    user = with pkgs; [
+    # unsorted-user = with pkgs; [
       # ardour
       # bottles
       # boxbuddy
@@ -63,7 +63,8 @@
       # vscode
     ];
     
-    unsorted-system = with pkgs; [
+    system = with pkgs; [
+    # unsorted-system = with pkgs; [
       # acpi
       # android-tools
       # autoconf
@@ -129,16 +130,21 @@
     
   };
 
-  # Let this here
-  options.packages = lib.mkOption { type = lib.types.attrs; default = {
-    user = lib.mkOption { type = lib.types.path; default = []; };
-    system = lib.mkOption { type = lib.types.path; default = []; };
-    cli = lib.mkOption { type = lib.types.path; default = []; };
-    gui = lib.mkOption { type = lib.types.path; default = []; };
-    dev = lib.mkOption { type = lib.types.path; default = []; };
-    browsers = lib.mkOption { type = lib.types.path; default = []; };
-    unsorted-user = lib.mkOption { type = lib.types.path; default = []; };
-    unsorted-system = lib.mkOption { type = lib.types.path; default = []; };
-  };};
+  options.packages = lib.mkOption {
+    type = lib.types.attrs;
+    default = {};
+  };
+  
+  # # Let this here
+  # options.packages = lib.mkOption { type = lib.types.attrs; default = {
+  #   user = lib.mkOption { type = lib.types.path; default = []; };
+  #   system = lib.mkOption { type = lib.types.path; default = []; };
+  #   cli = lib.mkOption { type = lib.types.path; default = []; };
+  #   gui = lib.mkOption { type = lib.types.path; default = []; };
+  #   dev = lib.mkOption { type = lib.types.path; default = []; };
+  #   browsers = lib.mkOption { type = lib.types.path; default = []; };
+  #   unsorted-user = lib.mkOption { type = lib.types.path; default = []; };
+  #   unsorted-system = lib.mkOption { type = lib.types.path; default = []; };
+  # };};
   
 }

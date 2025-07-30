@@ -2,9 +2,10 @@
 {
   config,
   pkgs,
+  custom,
   ...
 }: let
-  username = config.var.username;
+  username = custom.variables.username;
 in {
   programs.zsh.enable = true;
   users = {

@@ -1,4 +1,4 @@
-{ var, ... }: {
+{ custom, ... }: {
   programs.bash = {
     enable = true;
     enableCompletion = true;
@@ -22,7 +22,7 @@
         c-reload-shell = "source ~/.bashrc";
         c-update-all = "";
         c-clean-all = "";
-        c-debug-home = "journalctl --unit home-manager-${var.username}.service"; #--since=DATE
+        c-debug-home = "journalctl --unit home-manager-${custom.variables.username}.service"; #--since=DATE
     };
   };
 }

@@ -1,20 +1,21 @@
 # Misc
 {
-  pkgs,
-  config,
+  # pkgs,
+  # config,
+  custom,
   ...
 }: let
-  hostname = config.var.hostname;
-  keyboardLayout = config.var.keyboardLayout;
-  configDir = config.var.configDirectory;
-  timeZone = config.var.timeZone;
-  defaultLocale = config.var.defaultLocale;
-  extraLocale = config.var.extraLocale;
-  autoUpgrade = config.var.autoUpgrade;
-  stateVersion = config.var.stateVersion;
-  default = config.var.default;
-  env = config.var.env;
-  packages = config.packages;
+  hostname = custom.variables.hostname;
+  keyboardLayout = custom.variables.keyboardLayout;
+  configDir = custom.variables.configDirectory;
+  timeZone = custom.variables.timeZone;
+  defaultLocale = custom.variables.defaultLocale;
+  extraLocale = custom.variables.extraLocale;
+  autoUpgrade = custom.variables.autoUpgrade;
+  stateVersion = custom.variables.stateVersion;
+  # default = custom.variables.default;
+  # env = custom.variables.env;
+  packages = custom.packages;
 in {
   networking.hostName = hostname;
 

@@ -2,13 +2,9 @@
 {
   config,
   inputs,
+  custom,
   ...
 }:
-let
-  var = config.var;
-  modules = config.modules;
-  packages = config.packages;
-in
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
@@ -17,13 +13,13 @@ in
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "hm-backup";
-    extraSpecialArgs = {inherit inputs var modules;};
-    users."${var.username}" = {
-      imports = modules.home-manager;
+    extraSpecialArgs = {inherit inputs custom;};
+    users."${custom.variables.username}" = {
+      imports = custom.modules.home-manager;
       home = {
-        homeDirectory = "/home/" + var.username;
-        packages = packages.user;
-        stateVersion = var.stateVersion;
+        homeDirectory = "/home/" + custom.variables.username;
+        packages = custom.packages.user;
+        stateVersion = custom.variables.stateVersion;
       };
       programs.home-manager.enable = true;
     };

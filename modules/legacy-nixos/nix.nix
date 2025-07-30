@@ -1,14 +1,15 @@
 # Nix configuration for NixOS
 {
-  config,
+  # config,
   inputs,
+  custom,
   ...
 }: let
-  autoGarbageCollector = config.var.autoGarbageCollector;
+  autoGarbageCollector = custom.variables.autoGarbageCollector;
 in {
   security.sudo.extraRules = [
     {
-      users = [config.var.username];
+      users = [custom.variables.username];
       commands = [
         {
           command = "/run/current-system/sw/bin/nixos-rebuild";

@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   ...
 }: {
@@ -10,7 +9,8 @@
     username = "null";
     configDirectory =
       "/home/"
-      + config.var.username
+      + "null"
+      # + config.var.username
       + "/.config/nixos"; # The path of the nixos configuration directory
 
     keyboardLayout = "us";
@@ -46,7 +46,9 @@
   };
 
   # Let this here
-  options.var = lib.mkOption { type = lib.types.attrs; default = {
-  };};
+  options.var = lib.mkOption {
+    type = lib.types.attrs;
+    default = {};
+  };
 
 }

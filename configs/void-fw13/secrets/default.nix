@@ -3,10 +3,10 @@
 {
   pkgs,
   inputs,
-  var,
+  custom,
   ...
 }: let
-  username = var.username;
+  username = custom.variables.username;
 in {
   imports = [
     # inputs.sops-nix.nixosModules.sops

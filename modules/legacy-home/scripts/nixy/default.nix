@@ -8,10 +8,11 @@
 {
   pkgs,
   var,
+  custom,
   ...
 }: let
-  configDirectory = var.configDirectory;
-  hostname = var.hostname;
+  configDirectory = custom.variables.configDirectory;
+  hostname = custom.variables.hostname;
 
   nixy =
     pkgs.writeShellScriptBin "nixy"
