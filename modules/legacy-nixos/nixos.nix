@@ -11,8 +11,10 @@
   defaultLocale = config.var.defaultLocale;
   extraLocale = config.var.extraLocale;
   autoUpgrade = config.var.autoUpgrade;
+  stateVersion = config.var.stateVersion;
   default = config.var.default;
   env = config.var.env;
+  packages = config.packages;
 in {
   networking.hostName = hostname;
 
@@ -26,7 +28,9 @@ in {
     flags = ["--update-input" "nixpkgs" "--commit-lock-file"];
     allowReboot = false;
   };
-
+  
+  system.stateVersion = stateVersion;
+  
   services.fwupd.enable = true;
 
   time = {timeZone = timeZone;};
@@ -109,5 +113,6 @@ in {
 
   services.hardware.bolt.enable = true;
   # services.hardware.openrgb.enable = true;
+  environment.systemPackages = packages.system;
 
 }
